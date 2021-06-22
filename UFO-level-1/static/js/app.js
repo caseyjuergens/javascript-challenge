@@ -20,3 +20,5 @@ tableData.forEach(function(sighting){
     });
 });
 
+
+;
