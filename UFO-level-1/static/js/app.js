@@ -22,7 +22,7 @@ function loadData(){
 loadData();
 
 button.on("click", runEnter);
-form.on("click", runEnter);
+form.on("submit", runEnter);
 
 //create function to filter by date
 function runEnter(){
@@ -38,7 +38,16 @@ function runEnter(){
     //clear table
     tbody.html("");
 
-    loadData(filterByDate);
+    filterByDate.forEach(function(sighting){
+        console.log(sighting)
+        var row= tbody.append("tr");
+
+        Object.values(sighting).forEach(function(value){
+            console.log(value);
+            var cell=row.append("td");
+            cell.text(value);
+        });
+    });
     
 }
 
